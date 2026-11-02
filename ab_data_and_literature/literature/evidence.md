@@ -1,6 +1,6 @@
 # Literature evidence for the parameter table
 
-MATH 574 Team 2, AB (data and literature). Version of 1 November 2026.
+MATH 574, AB (data and literature). Version of 1 November 2026.
 
 Every value in `parameters/parameters.csv` traces to a source below. Records for the Puerto Rico studies, the incubation periods and the intervention reviews were opened on PubMed on 1 November 2026 (abstracts, plus the full text of Adams et al. 2022). The Section 4 sources (Manore 2014, Gubler 1998, Zahid 2023) were checked against the papers on 3 October 2026. All rates are per day.
 
