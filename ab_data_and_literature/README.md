@@ -32,20 +32,6 @@ The plan says to take the San Juan data from the DengAI competition (Kaggle/Driv
 | `raw/` | Source files exactly as downloaded, with their metadata |
 | `build_ab_package.py` | Rebuilds `data/`, `checks/`, `figures/` and `parameters.json` from `raw/` |
 
-## For each role
-
-- **D (Xindi):** `parameters/parameters.json` holds `PARAMS` with the 12 keys `dengue_model.py` uses, so it can replace the provisional dictionary directly:
-
-  ```python
-  import json
-  PARAMS = json.load(open("parameters/parameters.json"))["PARAMS"]
-  ```
-
-  N_h becomes 2,347,833 (the metro area the case data cover) and d_h becomes 3.478e-5 (life expectancy 78.717 years in 2010). The other values match Table 1. For a temperature-driven `eps_v`, use `eps_v_per_day` from the calibration file.
-- **E1 (Zaid):** fit `denv1_attributed_cases` in `data/calibration_san_juan_2010_11.csv`, with `days_since_start` as the week boundaries (week 35 is 8 days long). Fix s0 per scenario, and fit m in [1, 20] and φ in [0.003, 0.023] (`parameters.json`, `fitted_or_scenario`).
-- **E2 (Fahad):** the calibration file holds the same series as file 02 of the Section 4 data package (3,864 cases). The 2012/13 and 2024 files are ready for the holdout and comparison steps.
-- **C (Aileen):** every rate is per day. Units, ranges and sources are in `parameters.csv`.
-- **F (Deckar):** intervention evidence is in `literature/evidence.md`, section 4. That covers compliance κ (about 0.45 in Ponce, 2018–19), per-bite efficacy η, screens, traps (about an 80% cut in mosquitoes in Puerto Rico) and spraying (no effect size from trials). Calibration keeps κ = η = 0, so scenarios are changes from 2010 behaviour.
 
 ## Decisions for the team
 
